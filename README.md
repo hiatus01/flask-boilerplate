@@ -96,7 +96,7 @@ This repository contains a simple Flask boilerplate for building web application
   Users can register or log in via the `/auth` endpoint.
 
 - **Dashboard & Key Redemption:**  
-  After logging in, users can access `/dashboard` and redeem keys to upgrade their account subscriptions.
+  After logging in, users can access `/dashboard` and redeem keys to upgrade their account subscriptions. This is where your app content should go
 
 - **Admin Panel:**  
   Visit `/admin` to log in as an admin. Once authenticated, you can generate a new key by selecting a subscription tier or delete an existing key by its value.
