@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <h1>Welcome to the Flask Boilerplate</h1>
+        <p>A simple starting point for your Flask applications</p>
+        
+        {% if not user %}
+            <div class="cta-buttons">
+                <a href="{{ url_for('auth') }}" class="btn btn-primary">Get Started</a>
+            </div>
+        {% endif %}
+    </section>
+
+    <section class="features">
+        <h2>Features</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <h3>User Authentication</h3>
+                <p>Ready-to-use login and registration system</p>
+            </div>
+            <div class="feature">
+                <h3>Account Tiers</h3>
+                <p>Free and premium account tiers with key redemption</p>
+            </div>
+            <div class="feature">
+                <h3>JSON Database</h3>
+                <p>Simple file-based storage for development</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

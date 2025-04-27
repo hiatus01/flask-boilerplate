@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block content %}
+    <h1>Admin Panel</h1>
+
+    {% if not admin_authenticated %}
+        <h2>Admin Login</h2>
+        <form method="POST" action="{{ url_for('admin') }}">
+            <input type="hidden" name="form_type" value="login">
+            <div class="form-group">
+                <label for="admin-password">Admin Password</label>
+                <input type="password" id="admin-password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login as Admin</button>
+        </form>
+    {% else %}
+        <p><a href="{{ url_for('admin_logout') }}">Logout Admin</a></p>
+        <h2>Generate New Key</h2>
+        <form method="POST" action="{{ url_for('admin') }}">
+            <input type="hidden" name="form_type" value="action">
+            <input type="hidden" name="action" value="generate">
+            <div class="form-group">
+                <label for="tier">Tier</label>
+                <select id="tier" name="tier" required>
+                    <option value="1month">1month</option>
+                    <option value="3month">3month</option>
+                    <option value="12month">12month</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Key</button>
+        </form>
+        
+        <h2>Delete a Key</h2>
+        <form method="POST" action="{{ url_for('admin') }}">
+            <input type="hidden" name="form_type" value="action">
+            <input type="hidden" name="action" value="delete">
+            <div class="form-group">
+                <label for="key_value">Key Value</label>
+                <input type="text" id="key_value" name="key_value" placeholder="Enter key to delete" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Delete Key</button>
+        </form>
+        
+        <h2>Existing Keys</h2>
+        {% if keys %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>Tier</th>
+                        <th>Used?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key in keys %}
+                    <tr>
+                        <td>{{ key.key }}</td>
+                        <td>{{ key.tier }}</td>
+                        <td>{{ key.used }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No keys available.</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

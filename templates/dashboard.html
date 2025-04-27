@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Welcome to your Dashboard, {{ user.username }}!</h1>
+    
+    <div class="dashboard-content">
+        <div class="account-info">
+            <h2>Account Information</h2>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Account Tier:</strong> {{ user.tier }}</p>
+            {% if user.subscription_end %}
+                <p><strong>Subscription Ends:</strong> {{ user.subscription_end }}</p>
+            {% endif %}
+        </div>
+
+        <div class="key-redemption">
+            <h2>Redeem Key</h2>
+            <form id="redeem-form">
+                <div class="form-group">
+                    <label for="key-input">Activation Key</label>
+                    <input type="text" id="key-input" placeholder="Enter your key here" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Redeem</button>
+            </form>
+            <div id="redeem-result"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

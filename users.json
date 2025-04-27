@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1cd7634a-2341-488f-bdc2-a7e0f6c4247d",
+    "username": "sadsad",
+    "email": "sadsadsad@asd.com",
+    "password": "scrypt:32768:8:1$9dPXkZvWLhBgPQCN$5090aa498d86b7c928de47b518aa3f5827beeb1801b2c69bfd7012637230e3d6c274d416f8cb4a2b1e837d24295c324686fdede242028563df7fe1d2e4a97659",
+    "tier": "free",
+    "created_at": "2025-04-27 09:56:33",
+    "subscription_end": null
+  },
+  {
+    "id": "8936a0a6-b76d-4718-a683-73c8b53deb48",
+    "username": "asdasdas",
+    "email": "ad@ad.com",
+    "password": "scrypt:32768:8:1$TVDt3PzRXPeN0BJR$5fd8dd87131df3edfc0c56001280b7a977e81fdf42d7cc055bcd034cc85c5337479190c8563b0c19389169a47433de5e656cbc7a0fa919c0736557fbd020a182",
+    "tier": "12month",
+    "created_at": "2025-04-27 09:56:44",
+    "subscription_end": "2026-04-27"
+  }
+]
