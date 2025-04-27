@@ -19,8 +19,8 @@ This repository contains a simple Flask boilerplate for building web application
 - **File-based Storage:**  
   - Uses JSON files (`users.json` and `keys.json`) for data storage during development.
 
-- **Front-end:**  
-  - Templating using Jinja2.
+- **Front-end:**
+  - Simple-to-understand HTML
   - Responsive design with custom CSS.
   - Simple JavaScript for form handling and flash messages.
 
